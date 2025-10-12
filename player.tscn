@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bujxqiad0dek2"]
+
+[ext_resource type="Script" uid="uid://c3gl5g5njhcl" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ceoag0bfnvjty" path="res://Tiles/Characters/Basic Charakter Spritesheet.png" id="2_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(12, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_onrkg")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_onrkg")
