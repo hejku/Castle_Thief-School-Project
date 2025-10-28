@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c16ry5fm02p0k"]
+
+[ext_resource type="Script" uid="uid://sqskuwd5w4kf" path="res://UI/timer_ui.gd" id="1_e887x"]
+
+[node name="TimerUI" type="CanvasLayer"]
+script = ExtResource("1_e887x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2

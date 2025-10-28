@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://14s5khdkkgts"]
+
+[ext_resource type="Script" uid="uid://de2c8nmog4xwh" path="res://Minigames/GameInteract.gd" id="1_fh6rw"]
+[ext_resource type="Texture2D" uid="uid://paa480sta1tw" path="res://Tiles/Deskplaceholder.png" id="2_fh6rw"]
+[ext_resource type="FontFile" uid="uid://cjr76v4kpt23t" path="res://UI/PrinceValiant.ttf" id="3_i3yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe8pj"]
+size = Vector2(265.5, 216.49998)
+
+[node name="Biurko" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_fh6rw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fh6rw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.2500095, -19.999994)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_oe8pj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.749989
+offset_top = -169.99997
+offset_right = 2092.2498
+offset_bottom = 90.00003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/normal_font = ExtResource("3_i3yge")
+theme_override_fonts/bold_font = ExtResource("3_i3yge")
+theme_override_fonts/bold_italics_font = ExtResource("3_i3yge")
+theme_override_fonts/italics_font = ExtResource("3_i3yge")
+theme_override_fonts/mono_font = ExtResource("3_i3yge")
+theme_override_font_sizes/normal_font_size = 200
+text = " [E] "
+scroll_active = false

@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0qu4o8o20uyd"]
+
+[ext_resource type="Script" uid="uid://br1qxkdpue4qn" path="res://UI/lose_screen.gd" id="1_83sw7"]
+[ext_resource type="FontFile" uid="uid://cjr76v4kpt23t" path="res://UI/PrinceValiant.ttf" id="2_omspb"]
+[ext_resource type="Texture2D" uid="uid://tdnarxdivg1a" path="res://UI/rpojekt.png11.png" id="3_0iwc1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omspb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0iwc1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i376"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oiisw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pobfo"]
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_83sw7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.76400006
+anchor_top = 0.46300003
+anchor_right = 0.76400006
+anchor_bottom = 0.46300003
+offset_left = -233.88013
+offset_top = -31.024017
+offset_right = 205.11987
+offset_bottom = 200.47598
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49803922, 0.42352942, 0.42352942, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_omspb")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_omspb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0iwc1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0i376")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oiisw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pobfo")
+text = "Main Menu"
+
+[node name="Rpojekt_png11" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(960, 540)
+texture = ExtResource("3_0iwc1")

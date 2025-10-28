@@ -1,18 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://bujxqiad0dek2"]
+[gd_scene load_steps=8 format=3 uid="uid://bujxqiad0dek2"]
 
-[ext_resource type="Script" uid="uid://c3gl5g5njhcl" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://ceoag0bfnvjty" path="res://Tiles/Characters/Basic Charakter Spritesheet.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://c3gl5g5njhcl" path="res://Skrypty/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://3q01tgxec0xp" path="res://CastleThiefTiles(original)/front.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cnj85hnflxl8k" path="res://CastleThiefTiles(original)/right.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://dwtjlgg2e3uyb" path="res://CastleThiefTiles(original)/back.png" id="4_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://baeqdpl8yawvq" path="res://CastleThiefTiles(original)/left.png" id="4_hqtel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(12, 16)
+size = Vector2(12, 19)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivps1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sweqy")
+}],
+"loop": true,
+"name": &"walk_e",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2hs0m")
+}],
+"loop": true,
+"name": &"walk_n",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}],
+"loop": true,
+"name": &"walk_s",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hqtel")
+}],
+"loop": true,
+"name": &"walk_w",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_onrkg")
-hframes = 4
-vframes = 4
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ivps1")
+animation = &"walk_e"
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

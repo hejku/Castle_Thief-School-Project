@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkruiduohosip"]
+
+[ext_resource type="Script" uid="uid://b6x0c2if3430y" path="res://Minigames/TalerzMinigame.gd" id="1_mklh2"]
+
+[node name="TalerzMinigame" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mklh2")
+
+[node name="Plate" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = -102.0
+offset_right = 87.0
+offset_bottom = -62.0
+
+[node name="DirtLayer" type="ColorRect" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 121.0
+offset_top = -117.0
+offset_right = 161.0
+offset_bottom = -77.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 0.078431375)
+
+[node name="Timer" type="Timer" parent="."]

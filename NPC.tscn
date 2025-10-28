@@ -1,87 +1,82 @@
-[gd_scene load_steps=25 format=3 uid="uid://dfqc2266ar14k"]
+[gd_scene load_steps=25 format=3 uid="uid://bv6o7oxktpgqu"]
 
-[ext_resource type="Script" uid="uid://u5mdt44yu8j2" path="res://Skrypty/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://chlwephdnbkf8" path="res://Tiles/Characters/Human-Worker-Red.png" id="2_4gyqm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfv5t"]
-size = Vector2(24, 30)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_867ty"]
-radius = 50.039986
+[ext_resource type="Script" uid="uid://dexs5k3806h1k" path="res://Skrypty/NPC.gd" id="1_ll5ud"]
+[ext_resource type="Texture2D" uid="uid://chlwephdnbkf8" path="res://Tiles/Characters/Human-Worker-Red.png" id="2_ll5ud"]
+[ext_resource type="PackedScene" uid="uid://c4khcualr8ba2" path="res://Dialogue - goblin.tscn" id="3_u1jv5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1jv5"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tciug"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll5ud"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bksm8"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jc52h"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sao2"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5vbj"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(32, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ru7ao"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(64, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7isa0"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(96, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1478n"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(128, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6m5aw"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1hoc"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i48ha"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8ame"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hge7"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(32, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rmvk"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7vc0"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(96, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78u5r"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_ll5ud")
 region = Rect2(128, 192, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4gyqm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_twre2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -163,40 +158,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1jv5"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(47, 44)
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="NPC" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_4gyqm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_vfv5t")
-disabled = true
-
-[node name="Detection" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
-shape = SubResource("CircleShape2D_867ty")
+platform_floor_layers = 4294967041
+platform_wall_layers = 3
+script = ExtResource("1_ll5ud")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 10)
-sprite_frames = SubResource("SpriteFrames_4gyqm")
-animation = &"walk_e"
+sprite_frames = SubResource("SpriteFrames_twre2")
+animation = &"walk_s"
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_u1jv5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 9)
+[node name="chat_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_area"]
+position = Vector2(-1, 9)
 shape = SubResource("RectangleShape2D_4gyqm")
 
-[node name="RayCastForward" type="RayCast2D" parent="."]
-collide_with_areas = true
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
-[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[node name="Dialogue - goblin" parent="." instance=ExtResource("3_u1jv5")]
+offset_top = 5.0
+offset_bottom = 5.0
+
+[node name="RayCastForward" type="RayCast2D" parent="."]
+target_position = Vector2(0, 47)
+collision_mask = 3
+
+[connection signal="body_entered" from="chat_area" to="." method="_on_chat_area_body_entered"]
+[connection signal="body_exited" from="chat_area" to="." method="_on_chat_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="dialogue_finished" from="Dialogue - goblin" to="." method="_on_dialogue__goblin_dialogue_finished"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://chivo1uh6ragd"]
+
+[ext_resource type="Script" uid="uid://bplcsrqccdm7x" path="res://Minigames/MiniGame_MisKrola.gd" id="1_dy6jx"]
+
+[node name="MisMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dy6jx")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+top_level = true
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+
+[node name="SuccessZone" type="ColorRect" parent="."]
+top_level = true
+light_mask = 7
+visibility_layer = 7
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+color = Color(0.7632135, 0.7632135, 0.76321346, 0.663)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 460.0
+offset_top = 434.0
+offset_right = 728.0
+offset_bottom = 482.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 173.00003
+offset_top = 29.000004
+offset_right = 819.0
+offset_bottom = 84.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 400
+text = "m,n"
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 0.078431375)

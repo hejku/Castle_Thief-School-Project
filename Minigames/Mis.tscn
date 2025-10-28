@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://eg43ocjs2r5u"]
+
+[ext_resource type="Script" uid="uid://de2c8nmog4xwh" path="res://Minigames/GameInteract.gd" id="1_nu1cc"]
+[ext_resource type="FontFile" uid="uid://cjr76v4kpt23t" path="res://UI/PrinceValiant.ttf" id="2_nu1cc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe8pj"]
+size = Vector2(440.00012, 434.5)
+
+[node name="Mis" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_nu1cc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.5258789e-05, 4.9999847)
+scale = Vector2(0.15306123, 0.1632653)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.7683707e-06, 142.74994)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_oe8pj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.000008
+offset_top = -150.00002
+offset_right = 2084.9998
+offset_bottom = 109.999985
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/normal_font = ExtResource("2_nu1cc")
+theme_override_fonts/bold_font = ExtResource("2_nu1cc")
+theme_override_fonts/bold_italics_font = ExtResource("2_nu1cc")
+theme_override_fonts/italics_font = ExtResource("2_nu1cc")
+theme_override_fonts/mono_font = ExtResource("2_nu1cc")
+theme_override_font_sizes/normal_font_size = 200
+text = " [E] "
+scroll_active = false
