@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://14s5khdkkgts"]
+[gd_scene load_steps=4 format=3 uid="uid://14s5khdkkgts"]
 
 [ext_resource type="Script" uid="uid://de2c8nmog4xwh" path="res://Minigames/GameInteract.gd" id="1_fh6rw"]
-[ext_resource type="Texture2D" uid="uid://paa480sta1tw" path="res://Tiles/Deskplaceholder.png" id="2_fh6rw"]
 [ext_resource type="FontFile" uid="uid://cjr76v4kpt23t" path="res://UI/PrinceValiant.ttf" id="3_i3yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oe8pj"]
-size = Vector2(265.5, 216.49998)
+size = Vector2(575.0001, 340.0002)
 
 [node name="Biurko" type="Area2D"]
 scale = Vector2(0.2, 0.2)
@@ -13,11 +12,10 @@ script = ExtResource("1_fh6rw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_fh6rw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.2500095, -19.999994)
-scale = Vector2(0.9999998, 0.9999998)
+position = Vector2(2.5000234, 54.999996)
+scale = Vector2(0.9999992, 0.9999992)
 shape = SubResource("RectangleShape2D_oe8pj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

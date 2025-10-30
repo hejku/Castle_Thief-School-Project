@@ -14,17 +14,14 @@ var game_active = true
 
 @export var minigame_item_texture: Texture2D = preload("res://item/berlo.png")
 @export var minigame_item_value: int = 200
-@export var minigame_id := "wasd_minigame"  # Unique ID for this minigame
+@export var minigame_id := "wasd_minigame" 
 
 func _ready() -> void:
-	# Check if minigame was already completed
 	if _is_minigame_completed():
 		game_active = false
-		# Hide all UI elements
 		background.visible = false
 		key_label.visible = false
 		
-		# Show message and close immediately
 		instruction.text = "Minigra już ukończona!"
 		instruction.modulate = Color(1, 0.5, 0)
 		await get_tree().create_timer(1.5).timeout
@@ -35,20 +32,19 @@ func _ready() -> void:
 	for i in range(sequence_length):
 		sequence.append(all_keys[randi() % all_keys.size()])
 
-	# Move the whole UI a bit lower
 	key_label.anchor_left = 0.5
 	key_label.anchor_top = 0.5
 	key_label.anchor_right = 0.5
 	key_label.anchor_bottom = 0.5
 	key_label.offset_left = -key_label.size.x / 2
-	key_label.offset_top = 150  # lower center
+	key_label.offset_top = 150  
 
 	instruction.anchor_left = 0.5
 	instruction.anchor_top = 0.5
 	instruction.anchor_right = 0.5
 	instruction.anchor_bottom = 0.5
 	instruction.offset_left = -instruction.size.x / 2
-	instruction.offset_top = 220  # appears below the key label
+	instruction.offset_top = 220 
 
 	if background:
 		background.color = Color(0, 0, 0, 0.6)
@@ -122,7 +118,7 @@ func _success() -> void:
 	
 	await get_tree().create_timer(1.5).timeout
 	
-	_mark_minigame_completed()  # Mark as completed
+	_mark_minigame_completed()  
 	
 	var item = {
 		"texture": minigame_item_texture,

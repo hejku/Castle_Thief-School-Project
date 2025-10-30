@@ -42,7 +42,6 @@ func _start_minigame(scene: PackedScene) -> void:
 	minigame_layer.add_child(minigame_instance)
 
 	if minigame_instance is Control:
-		# Make it fill the screen
 		minigame_instance.anchor_left = 0.0
 		minigame_instance.anchor_top = 0.0
 		minigame_instance.anchor_right = 1.0
@@ -51,7 +50,7 @@ func _start_minigame(scene: PackedScene) -> void:
 		minigame_instance.offset_top = 0
 		minigame_instance.offset_right = 0
 		minigame_instance.offset_bottom = 0
-		minigame_instance.size = get_viewport_rect().size  # Ensure proper size
+		minigame_instance.size = get_viewport_rect().size 
 
 	player.set_process(false)
 	player.set_physics_process(false)
@@ -60,11 +59,10 @@ func _start_minigame(scene: PackedScene) -> void:
 		minigame_instance.connect("minigame_finished", Callable(self, "_on_minigame_finished"))
 
 
-func _on_minigame_finished(item) -> void:  # CHANGED: Added item parameter
+func _on_minigame_finished(item) -> void:  
 	player.set_process(true)
 	player.set_physics_process(true)
 
-	# Add item to global inventory if minigame was successful
 	if item and GlobalInventory:
 		GlobalInventory.add_item(item)
 		print("Item added to global inventory from throne minigame!")

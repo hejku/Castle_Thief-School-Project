@@ -5,7 +5,7 @@ signal minigame_finished(item)
 @onready var instruction = $VBoxContainer/Label
 @onready var background = $Background
 @onready var targets_container = $CenterContainer/HBoxContainer
-@onready var timer = $Timer  # Add Timer node in scene tree
+@onready var timer = $Timer 
 
 var dragging_item: Control = null
 var drag_offset: Vector2 = Vector2.ZERO
@@ -20,7 +20,6 @@ var time_left := 10
 @export var minigame_id := "drag_drop_minigame"  
 
 func _ready() -> void:
-	# Check if minigame was already completed
 	if _is_minigame_completed():
 		game_active = false
 		background.visible = false
@@ -47,7 +46,6 @@ func _ready() -> void:
 	instruction.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	instruction.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
-	# Show start screen
 	_show_start_screen()
 
 func _show_start_screen() -> void:
@@ -62,7 +60,6 @@ func _start_minigame() -> void:
 	waiting_for_start = false
 	game_active = true
 	
-	# Setup game elements
 	var targets = targets_container.get_children()
 	var items = []
 	for child in get_children():
@@ -82,7 +79,6 @@ func _start_minigame() -> void:
 		item_targets[item] = target
 		item.position = Vector2(randf_range(100, 1740), randf_range(100, 900))
 
-	# Setup timer
 	if timer:
 		timer.wait_time = 1.0
 		timer.timeout.connect(_on_timer_timeout)
@@ -135,7 +131,7 @@ func _check_place(item: Control) -> void:
 	
 	if item_rect.intersects(target_rect):
 		item.global_position = target.global_position
-		item.mouse_filter = Control.MOUSE_FILTER_IGNORE  # disables future movement
+		item.mouse_filter = Control.MOUSE_FILTER_IGNORE  
 		placed_count += 1
 		_update_instruction()
 
@@ -162,7 +158,7 @@ func _success() -> void:
 	instruction.modulate = Color(0, 1, 0)
 	await get_tree().create_timer(1.5).timeout
 
-	_mark_minigame_completed()  # Mark as completed
+	_mark_minigame_completed() 
 
 	var item = {
 		"texture": minigame_item_texture,

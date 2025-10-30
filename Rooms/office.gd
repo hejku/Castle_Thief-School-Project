@@ -40,7 +40,6 @@ func _start_minigame(scene: PackedScene) -> void:
 	minigame_instance = scene.instantiate()
 	minigame_layer.add_child(minigame_instance)
 
-	# Wait one frame to ensure it's added before setting anchors
 	await get_tree().process_frame
 
 	if minigame_instance is Control:

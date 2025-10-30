@@ -4,7 +4,7 @@ signal minigame_finished(item)
 
 @onready var instruction = $Label
 @onready var background = $Background
-@onready var timer = $Timer  # Add Timer node in scene tree
+@onready var timer = $Timer  
 
 var plates: Array[Control] = []
 var dirt_layers: Array[ColorRect] = []
@@ -58,7 +58,6 @@ func _ready() -> void:
 		instruction.offset_bottom = 30
 		instruction.modulate = Color(1, 1, 1)
 
-	# Show start screen
 	_show_start_screen()
 
 func _show_start_screen() -> void:
@@ -66,7 +65,7 @@ func _show_start_screen() -> void:
 	game_active = false
 	
 	if instruction:
-		instruction.anchor_top = 0.1  # Move to top middle
+		instruction.anchor_top = 0.1  
 		instruction.anchor_bottom = 0.1
 		instruction.text = "Clean the plates before time runs out!\nClick anywhere to start"
 		instruction.modulate = Color(1, 1, 1)
@@ -74,8 +73,7 @@ func _show_start_screen() -> void:
 func _start_minigame() -> void:
 	waiting_for_start = false
 	game_active = true
-	
-	# Reset instruction position
+
 	if instruction:
 		instruction.anchor_top = 0.95
 		instruction.anchor_bottom = 0.8
@@ -84,13 +82,11 @@ func _start_minigame() -> void:
 		instruction.offset_left = -250
 		instruction.offset_right = 250
 
-	# Setup timer
 	if timer:
 		timer.wait_time = 1.0
 		timer.timeout.connect(_on_timer_timeout)
 		timer.start()
 
-	# Create plates
 	_create_plates()
 
 func _input(event: InputEvent) -> void:
@@ -141,7 +137,6 @@ func _create_single_plate(index: int) -> Control:
 	plate_container.offset_left = -75
 	plate_container.offset_top = -75
 
-	# Plate background
 	var plate = ColorRect.new()
 	plate.name = "PlateBackground"
 	plate.color = Color(0.579, 0.784, 0.988, 1)
@@ -160,7 +155,6 @@ func _create_single_plate(index: int) -> Control:
 	plate.material = ShaderMaterial.new()
 	plate.material.shader = circle_shader
 
-	# Dirt layer
 	var dirt = ColorRect.new()
 	dirt.name = "DirtLayer"
 	dirt.color = Color(0.4, 0.2, 0.1, 1)
@@ -211,7 +205,6 @@ func _plate_cleaned() -> void:
 	game_active = false
 	var current_plate = plates[current_plate_index]
 
-	# Animate plate sliding to the right
 	var tween = create_tween()
 	tween.tween_property(current_plate, "position:x", size.x + 80, 0.9).as_relative()
 	tween.tween_callback(Callable(self, "_on_plate_animation_complete"))
@@ -245,7 +238,7 @@ func _success() -> void:
 
 	await get_tree().create_timer(1.5).timeout
 
-	_mark_minigame_completed()  # Mark as completed
+	_mark_minigame_completed()  
 
 	var item = {
 		"texture": minigame_item_texture,

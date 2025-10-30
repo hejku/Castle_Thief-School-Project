@@ -5,8 +5,8 @@ signal minigame_finished(item)
 @export var success_zone_start := 40
 @export var success_zone_end := 60
 @export var speed := 150
-@export var minigame_item_texture: Texture2D = preload("res://item/mis.webp")
-@export var minigame_id := "teddy_bear_minigame"  # Unique ID for this minigame
+@export var minigame_item_texture: Texture2D = preload("res://item/mis.png")
+@export var minigame_id := "teddy_bear_minigame" 
 @onready var instruction = $Label
 @onready var background = $Background
 @onready var bar = $TextureProgressBar
@@ -25,24 +25,20 @@ const BAR_WIDTH := 800
 const BAR_HEIGHT := 40
 
 func _ready():
-	# Check if minigame was already completed
 	if _is_minigame_completed():
 		game_active = false
-		# Hide all UI elements
 		background.visible = false
 		bar.visible = false
 		success_zone.visible = false
 		button.visible = false
 		timer.stop()
 		
-		# Show message and close immediately
 		instruction.text = "Minigra już ukończona!"
 		instruction.modulate = Color(1, 0.5, 0)
 		await get_tree().create_timer(1.5).timeout
 		emit_signal("minigame_finished", null)
 		return
 	
-	# Full screen
 	anchor_left = 0
 	anchor_top = 0
 	anchor_right = 1
@@ -59,7 +55,6 @@ func _ready():
 	background.offset_right = 0
 	background.offset_bottom = 0
 
-	# Bar
 	bar.min_value = 0
 	bar.max_value = 100
 	bar.value = progress_value
@@ -76,13 +71,11 @@ func _ready():
 	@warning_ignore("integer_division")
 	bar.offset_bottom = int(BAR_HEIGHT / 2)
 
-	# Bar textures
 	if not bar.texture_under:
 		bar.texture_under = _make_colored_texture(Color(0.2, 0.2, 0.2), BAR_WIDTH, BAR_HEIGHT)
 	if not bar.texture_progress:
 		bar.texture_progress = _make_colored_texture(Color(0.2, 0.8, 0.2), BAR_WIDTH, BAR_HEIGHT)
 
-	# Success Zone (sibling)
 	var start_px = int(BAR_WIDTH * success_zone_start / 100.0)
 	var end_px = int(BAR_WIDTH * success_zone_end / 100.0)
 
@@ -100,7 +93,6 @@ func _ready():
 	success_zone.offset_bottom = int(BAR_HEIGHT / 2)
 	success_zone.color = Color(0, 1, 1, 0.3)
 
-	# Button lower
 	button.text = "Kliknij!"
 	button.anchor_left = 0.5
 	button.anchor_right = 0.5
@@ -112,7 +104,6 @@ func _ready():
 	button.offset_bottom = 20
 	button.pressed.connect(_on_button_pressed)
 
-	# Timer
 	timer.wait_time = 0.02
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
@@ -175,7 +166,6 @@ func _attempt_failed():
 	else:
 		_fail()
 
-# Show success/fail messages dynamically near bottom
 func _show_message(text: String, color: Color):
 	var msg_label = Label.new()
 	msg_label.text = text
@@ -183,7 +173,6 @@ func _show_message(text: String, color: Color):
 	msg_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	msg_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
-	# Anchor near bottom
 	msg_label.anchor_left = 0.5
 	msg_label.anchor_right = 0.5
 	msg_label.anchor_top = 0.9
@@ -204,7 +193,7 @@ func _success():
 	timer.stop()
 	await _show_message("Udało ci się ukraść misia!", Color(0, 1, 0))
 	
-	_mark_minigame_completed()  # Mark as completed
+	_mark_minigame_completed() 
 
 	var item = {
 		"texture": minigame_item_texture,

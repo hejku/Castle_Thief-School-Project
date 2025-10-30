@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://0p7btucmu75r"]
+[gd_scene load_steps=61 format=4 uid="uid://0p7btucmu75r"]
 
 [ext_resource type="Script" uid="uid://x06xft4f2ccm" path="res://Rooms/hall.gd" id="1_3ivdj"]
 [ext_resource type="Texture2D" uid="uid://b0myvm7at0qy7" path="res://CastleThiefTiles(original)/Wall2.png" id="1_bmihw"]
@@ -22,14 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://cejqv42jee7oe" path="res://CastleThiefTiles(original)/banner.png" id="20_5dbqs"]
 [ext_resource type="Script" uid="uid://jw6guc17da83" path="res://Skrypty/bedroom_door.gd" id="20_wt4nb"]
 [ext_resource type="Texture2D" uid="uid://fxmninypvjs3" path="res://Tiles/Inside_C.png" id="21_s4u3v"]
-[ext_resource type="PackedScene" uid="uid://bv6o7oxktpgqu" path="res://NPC.tscn" id="21_wu6c3"]
 [ext_resource type="Texture2D" uid="uid://2n1w7dnnjtts" path="res://Tiles/Inside_B.png" id="22_6q1oj"]
+[ext_resource type="Texture2D" uid="uid://bwgcob7dlrdhv" path="res://CastleThiefTiles(original)/tilemap2.png" id="23_6q1oj"]
+[ext_resource type="Texture2D" uid="uid://ba0lceei3vbg4" path="res://CastleThiefTiles(original)/kolumna_mniejsza.png" id="24_6w8fp"]
 [ext_resource type="Script" uid="uid://bvjafjcqbx225" path="res://Rooms/throne_door.gd" id="24_ijvek"]
 [ext_resource type="Script" uid="uid://dhulgyr2h2dbm" path="res://Rooms/dining_room.gd" id="25_cur4f"]
 [ext_resource type="Script" uid="uid://bvyocjgf4on2j" path="res://Rooms/office_door.gd" id="25_l3gjt"]
 [ext_resource type="Script" uid="uid://cjw26aow8bccd" path="res://Rooms/Kitchen_door.gd" id="26_pujlp"]
 [ext_resource type="FontFile" uid="uid://cjr76v4kpt23t" path="res://UI/PrinceValiant.ttf" id="27_pujlp"]
 [ext_resource type="PackedScene" uid="uid://bu5gylr742uw4" path="res://Inventory/inventory.tscn" id="28_5dbqs"]
+[ext_resource type="PackedScene" uid="uid://bvh83pvkw225h" path="res://Goblin.tscn" id="30_s4u3v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3blte"]
 texture = ExtResource("1_bmihw")
@@ -2176,12 +2178,226 @@ texture = ExtResource("22_6q1oj")
 30:31/0 = 0
 31:31/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqj2f"]
+texture = ExtResource("23_6q1oj")
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+2:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+2:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+13:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbq0w"]
+texture = ExtResource("24_6w8fp")
+3:0/0 = 0
+4:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_dvn1c"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nxxdr")
 sources/1 = SubResource("TileSetAtlasSource_84dqv")
 sources/2 = SubResource("TileSetAtlasSource_6w8fp")
 sources/3 = SubResource("TileSetAtlasSource_y3ijk")
+sources/4 = SubResource("TileSetAtlasSource_pqj2f")
+sources/5 = SubResource("TileSetAtlasSource_kbq0w")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijvek"]
 size = Vector2(27, 46)
@@ -2213,6 +2429,7 @@ tile_map_data = PackedByteArray("AAAoABIAAwAYABIAAAAoABMAAwAYABMAAAAoABQAAwAYABQ
 tile_set = SubResource("TileSet_dvn1c")
 
 [node name="Player" parent="." instance=ExtResource("19_imls8")]
+top_level = true
 position = Vector2(137, 397)
 
 [node name="StartPosition" type="Node2D" parent="."]
@@ -2389,9 +2606,6 @@ theme_override_font_sizes/normal_font_size = 200
 text = " [E] "
 scroll_active = false
 
-[node name="NPC" parent="." instance=ExtResource("21_wu6c3")]
-position = Vector2(173, 72)
-
 [node name="ExitArea" type="Area2D" parent="."]
 position = Vector2(115, 438)
 
@@ -2421,6 +2635,9 @@ theme_override_fonts/mono_font = ExtResource("27_pujlp")
 theme_override_font_sizes/normal_font_size = 200
 text = "Press [E] to leave the castle"
 scroll_active = false
+
+[node name="NPC" parent="." instance=ExtResource("30_s4u3v")]
+position = Vector2(219, 111)
 
 [connection signal="body_entered" from="SpawnPoint_BedroomDoor/BedroomDoor" to="Player" method="_on_bedroom_door_body_entered"]
 [connection signal="body_entered" from="SpawnPoint_ThroneDoor/ThroneDoor" to="Player" method="_on_bedroom_door_body_entered"]

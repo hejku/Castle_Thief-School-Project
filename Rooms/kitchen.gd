@@ -21,14 +21,14 @@ func _ready() -> void:
 	else:
 		print("⚠️ Nie znaleziono obiektu 'Talerz' w tej scenie!")
 
-	if GameState.last_room == "Kitchen":  # CHANGED: Fixed room name
+	if GameState.last_room == "Kitchen": 
 		player.global_position = GameState.last_position
 	else:
 		var start_pos = get_node_or_null("StartPosition")
 		if start_pos:
 			player.global_position = start_pos.global_position
 		else:
-			push_error("Brakuje Position2D o nazwie StartPosition w scenie Kitchen!")  # CHANGED: Fixed room name
+			push_error("Brakuje Position2D o nazwie StartPosition w scenie Kitchen!")  
 
 func _on_talerz_pressed() -> void:
 	_start_minigame(talerz_minigame_scene)
@@ -55,11 +55,10 @@ func _start_minigame(scene: PackedScene) -> void:
 	if minigame_instance.has_signal("minigame_finished"):
 		minigame_instance.connect("minigame_finished", Callable(self, "_on_minigame_finished"))
 
-func _on_minigame_finished(item) -> void:  # CHANGED: Added item parameter
+func _on_minigame_finished(item) -> void: 
 	player.set_process(true)
 	player.set_physics_process(true)
 
-	# Add item to global inventory if minigame was successful
 	if item and GlobalInventory:
 		GlobalInventory.add_item(item)
 		print("Item added to global inventory from kitchen minigame!")

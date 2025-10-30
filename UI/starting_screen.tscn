@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvmaqdu3e1l1o"]
+[gd_scene load_steps=9 format=3 uid="uid://dvmaqdu3e1l1o"]
 
 [ext_resource type="Script" uid="uid://d2g3jwe6q5doh" path="res://UI/starting_screen.gd" id="1_scqjl"]
 [ext_resource type="FontFile" uid="uid://cjr76v4kpt23t" path="res://UI/PrinceValiant.ttf" id="2_bluck"]
+[ext_resource type="Texture2D" uid="uid://dphourjsabdbk" path="res://UI/menu.png3.png" id="3_1dlvo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dlvo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htgf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imbcp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmge5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ejjyh"]
 
 [node name="StartingScreen" type="Control"]
 layout_mode = 3
@@ -12,20 +23,72 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_scqjl")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 177.00002
+offset_top = 467.99994
+offset_right = 493.0
+offset_bottom = 1059.0
+rotation = -0.2617994
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bluck")
 
-[node name="Play" type="Button" parent="CenterContainer"]
+[node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.32941177, 0.32941177, 0.32941177, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_bluck")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dlvo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_htgf6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_imbcp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vmge5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ejjyh")
+text = "Play"
 
-[node name="Options" type="Button" parent="CenterContainer"]
+[node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.49803922, 0.42352942, 0.42352942, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_bluck")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dlvo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_htgf6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_imbcp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vmge5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ejjyh")
+text = "Options"
 
-[node name="Quit" type="Button" parent="CenterContainer"]
+[node name="Creators" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.49803922, 0.42352942, 0.42352942, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_bluck")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dlvo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_htgf6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_imbcp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vmge5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ejjyh")
+text = "Creators
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32941177, 0.32941177, 0.32941177, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_bluck")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dlvo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_htgf6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_imbcp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vmge5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ejjyh")
+text = "Quit"
+
+[node name="Menu_png3" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(960, 540)
+texture = ExtResource("3_1dlvo")

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player = $Player
 @export var miskrola_minigame_scene: PackedScene = preload("res://Minigames/MisMinigame.tscn")
-@onready var inventory = $UI/Inventory  # Change this line to relative path
+@onready var inventory = $UI/Inventory  
 
 var minigame_instance: Control = null
 var minigame_layer: CanvasLayer = null
@@ -22,7 +22,6 @@ func _ready() -> void:
 	else:
 		print("⚠️ Nie znaleziono obiektu 'Mis' w tej scenie!")
 
-	# DEBUG: Check if inventory is found
 	if inventory:
 		print("✅ Inventory found: ", inventory)
 	else:
@@ -46,7 +45,6 @@ func _start_minigame(scene: PackedScene) -> void:
 
 	minigame_instance = scene.instantiate()
 	
-	# Make sure minigame fills the screen
 	if minigame_instance is Control:
 		minigame_instance.anchor_left = 0
 		minigame_instance.anchor_top = 0

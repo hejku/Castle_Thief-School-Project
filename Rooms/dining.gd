@@ -29,7 +29,7 @@ func _ready() -> void:
 		if start_pos:
 			player.global_position = start_pos.global_position
 		else:
-			push_error("Brakuje Position2D o nazwie StartPosition w scenie Dining!")  # CHANGED: Added room name
+			push_error("Brakuje Position2D o nazwie StartPosition w scenie Dining!")  
 
 func _on_wino_pressed() -> void:
 	_start_minigame(wino_minigame_scene)

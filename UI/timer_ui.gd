@@ -4,21 +4,18 @@ extends CanvasLayer
 @onready var background = $MarginContainer/ColorRect
 
 func _ready():
-	# Position at top right
 	$MarginContainer.anchor_left = 1.0
 	$MarginContainer.anchor_top = 0.0
 	$MarginContainer.anchor_right = 1.0
 	$MarginContainer.anchor_bottom = 0.0
-	$MarginContainer.offset_left = -150  # Width
+	$MarginContainer.offset_left = -150  
 	$MarginContainer.offset_top = 10
 	$MarginContainer.offset_right = -10
-	$MarginContainer.offset_bottom = 50   # Height
+	$MarginContainer.offset_bottom = 50   
 	
-	# Background styling
 	background.color = Color(0, 0, 0, 0.7)
 	background.size = Vector2(140, 40)
 	
-	# Label styling
 	timer_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	timer_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	timer_label.add_theme_font_size_override("font_size", 20)

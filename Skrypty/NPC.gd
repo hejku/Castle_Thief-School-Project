@@ -54,15 +54,12 @@ func move_npc(_delta):
 	if is_chatting:
 		return
 	
-	# ustaw velocity wbudowaną właściwością CharacterBody2D
 	velocity = dir * speed
 	
-	# ruch z kolizjami
 	move_and_slide()
 	
-	# jeśli RayCast wykryje przeszkodę lub NPC jest na ścianie
 	if $RayCastForward.is_colliding() or is_on_wall():
-		current_state = IDLE  # zatrzymujemy ruch i animację chodzenia
+		current_state = IDLE  
 		dir = choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN]).normalized()
 
 func _on_chat_area_body_entered(body: Node2D) -> void:

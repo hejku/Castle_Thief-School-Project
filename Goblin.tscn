@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvh83pvkw225h"]
+
+[ext_resource type="Script" uid="uid://d1axttt21uve0" path="res://NPCSkrypt/goblin.gd" id="1_6yywj"]
+[ext_resource type="Texture2D" uid="uid://bfnjtywjdeqj2" path="res://CastleThiefTiles(original)/goblin.png" id="2_6yywj"]
+[ext_resource type="PackedScene" uid="uid://c4khcualr8ba2" path="res://Dialogue - goblin.tscn" id="3_rwidl"]
+[ext_resource type="FontFile" uid="uid://cjr76v4kpt23t" path="res://UI/PrinceValiant.ttf" id="4_yv55b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yywj"]
+atlas = ExtResource("2_6yywj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_twre2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yywj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_e",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_n",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_s",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_w",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1jv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(47, 44)
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+platform_floor_layers = 4294967041
+platform_wall_layers = 3
+script = ExtResource("1_6yywj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 10)
+sprite_frames = SubResource("SpriteFrames_twre2")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_u1jv5")
+
+[node name="chat_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_area"]
+position = Vector2(-1, 9)
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Dialogue - goblin" parent="." instance=ExtResource("3_rwidl")]
+offset_top = 5.0
+offset_bottom = 5.0
+
+[node name="RayCastForward" type="RayCast2D" parent="."]
+target_position = Vector2(0, 47)
+collision_mask = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.999989
+offset_top = -29.0
+offset_right = 2110.9998
+offset_bottom = 230.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/normal_font = ExtResource("4_yv55b")
+theme_override_fonts/bold_font = ExtResource("4_yv55b")
+theme_override_fonts/bold_italics_font = ExtResource("4_yv55b")
+theme_override_fonts/italics_font = ExtResource("4_yv55b")
+theme_override_fonts/mono_font = ExtResource("4_yv55b")
+theme_override_font_sizes/normal_font_size = 200
+text = " [E] "
+scroll_active = false
+
+[connection signal="body_entered" from="chat_area" to="." method="_on_chat_area_body_entered"]
+[connection signal="body_exited" from="chat_area" to="." method="_on_chat_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="dialogue_finished" from="Dialogue - goblin" to="." method="_on_dialogue__goblin_dialogue_finished"]

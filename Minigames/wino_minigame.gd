@@ -18,24 +18,20 @@ var attempts_left := max_attempts
 
 @export var minigame_item_texture: Texture2D = preload("res://CastleThiefTiles(original)/wino_gra.png")
 @export var minigame_item_value: int = 250
-@export var minigame_id := "door_minigame"  # Unique ID for this minigame
+@export var minigame_id := "door_minigame" 
 
 func _ready() -> void:
-	# Check if minigame was already completed
 	if _is_minigame_completed():
 		game_active = false
-		# Hide all UI elements
 		background.visible = false
 		door.visible = false
 		
-		# Show message and close immediately
 		instruction.text = "Minigra już ukończona!"
 		instruction.modulate = Color(1, 0.5, 0)
 		await get_tree().create_timer(1.5).timeout
 		emit_signal("minigame_finished", null)
 		return
 
-	# Fullscreen setup
 	size = get_viewport_rect().size
 	anchor_left = 0
 	anchor_top = 0
@@ -43,7 +39,6 @@ func _ready() -> void:
 	anchor_bottom = 1
 	position = Vector2.ZERO
 
-	# Background
 	if background:
 		background.color = Color(0,0,0,0.6)
 		background.anchor_left = 0
@@ -52,7 +47,6 @@ func _ready() -> void:
 		background.anchor_bottom = 1
 		background.position = Vector2.ZERO
 
-	# Door
 	if door:
 		door.color = Color(0.4,0.25,0.1)
 		door.size = Vector2(200,400)
@@ -62,7 +56,6 @@ func _ready() -> void:
 		door.anchor_bottom = 0.5
 		door.position = Vector2(size.x/2, size.y/2 - 250)
 
-	# Instruction Label
 	if instruction:
 		instruction.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		instruction.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -157,7 +150,7 @@ func _success() -> void:
 	_update_instruction_text("Udało się!", Color(0,1,0))
 	await get_tree().create_timer(1.5).timeout
 
-	_mark_minigame_completed()  # Mark as completed
+	_mark_minigame_completed()  
 
 	var item = {
 		"texture": minigame_item_texture,
